@@ -6,7 +6,7 @@ export const useLoadModels = (
 ) => {
   useEffect(() => {
     const loadModels = async () => {
-      const MODEL_URL = "/models"; // Path to models
+      const MODEL_URL = "/models";
       try {
         await Promise.all([
           faceapi.nets.tinyFaceDetector.loadFromUri(MODEL_URL),
