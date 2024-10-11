@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLoadModels } from "./hooks/useLoadModels";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { VideoCanvas } from "./component";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export const App = () => {
   const [initModel, setInitModel] = useState(false);

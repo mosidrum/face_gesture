@@ -12,30 +12,24 @@ export const VideoCanvaElements: React.FC<VideoCanvasElementsProps> = ({
   videoRef,
   canvasRef,
 }) => (
-  <div style={{ position: "relative", width: videoWidth, height: videoHeight }}>
+  <div
+    className="position-relative w-100"
+    style={{ maxWidth: `${videoWidth}px`, height: `${videoHeight}px` }}
+  >
     <video
       ref={videoRef}
       muted
-      height={videoHeight}
-      width={videoWidth}
+      className={`position-absolute top-0 start-0 ${isPlaying ? "d-block" : "d-none"}`}
       style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        visibility: isPlaying ? "visible" : "hidden",
+        width: "100%",
+        height: "100%",
+        objectFit: "contain",
       }}
     />
     <canvas
       ref={canvasRef}
-      height={videoHeight}
-      width={videoWidth}
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        zIndex: 1,
-        visibility: isPlaying ? "visible" : "hidden",
-      }}
+      className={`position-absolute top-0 start-0 w-100 h-100 ${isPlaying ? "d-block" : "d-none"}`}
+      style={{ objectFit: "contain" }}
     />
   </div>
 );
